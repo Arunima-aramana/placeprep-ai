@@ -644,4 +644,5 @@ if __name__ == "__main__":
     add_aptitude_questions()
     add_interview_questions()
 
+     port = int(os.environ.get("PORT", 5000))
      app.run(host="0.0.0.0", port=5000, debug=True)
