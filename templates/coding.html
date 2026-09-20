@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Coding Practice - PlacePrep AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        PlacePrep AI
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/dashboard">Dashboard</a>
+        <a href="/coding">Coding</a>
+        <a href="/logout">Logout</a>
+
+    </div>
+
+</nav>
+
+
+<section class="practice">
+
+    <p class="small-title">
+        CODING PRACTICE
+    </p>
+
+    <h1>
+        Practice Coding Problems
+    </h1>
+
+    <p>
+        Strengthen your programming skills for placement interviews.
+    </p>
+
+
+    <div class="question-list">
+
+        {% for question in questions %}
+
+        <div class="question-card">
+
+            <span class="difficulty">
+                {{ question["difficulty"] }}
+            </span>
+
+            <h2>
+                {{ question["title"] }}
+            </h2>
+
+            <p>
+                {{ question["description"] }}
+            </p>
+
+            <p class="category">
+                Category: {{ question["category"] }}
+            </p>
+
+            <button class="start-btn">
+                Solve Problem
+            </button>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+</body>
+
+</html>

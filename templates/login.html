@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - PlacePrep AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="auth-page">
+
+    <!-- Background laptop decorations -->
+    <div class="laptop laptop-left">
+        <div class="laptop-screen">
+            <div class="code-line">def prepare():</div>
+            <div class="code-line">skills = practice()</div>
+            <div class="code-line">if skills:</div>
+            <div class="code-line">    get_placed()</div>
+        </div>
+        <div class="laptop-base"></div>
+    </div>
+
+    <div class="laptop laptop-right">
+        <div class="laptop-screen">
+            <div class="code-line">Build Your</div>
+            <div class="code-line">Future</div>
+            <div class="code-line">Better Skills</div>
+            <div class="code-line">Bigger Opportunities</div>
+        </div>
+        <div class="laptop-base"></div>
+    </div>
+
+
+    <!-- Main content -->
+
+    <div class="auth-container">
+
+        <div class="brand">
+            <h1>🎓 PlacePrep AI</h1>
+
+            <p>
+                Your Complete Placement Preparation Companion
+            </p>
+
+            <div class="brand-features">
+                Practice &nbsp; • &nbsp; Improve &nbsp; • &nbsp; Get Placed
+            </div>
+        </div>
+
+
+        <div class="auth-card">
+
+            <div class="auth-tabs">
+
+                <div class="active-tab">
+                    Login
+                </div>
+
+                <a href="/register">
+                    Create Account
+                </a>
+
+            </div>
+
+
+            <div class="auth-content">
+
+                <h2>Welcome Back!</h2>
+
+                <p class="auth-description">
+                    Sign in to continue your placement preparation journey.
+                </p>
+
+
+                <form method="POST">
+
+                    <div class="input-group">
+
+                        <label>Email Address</label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Password</label>
+
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required>
+
+                    </div>
+
+
+                    <button type="submit" class="auth-button">
+                        Login
+                    </button>
+
+                </form>
+
+
+                <div class="auth-divider">
+                    <span></span>
+                    OR
+                    <span></span>
+                </div>
+
+
+                <div class="demo-login">
+                    Secure login with your PlacePrep AI account
+                </div>
+
+
+                <p class="account-text">
+                    Don't have an account?
+                    <a href="/register">Create Account</a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

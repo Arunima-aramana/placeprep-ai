@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PlacePrep AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+
+<body>
+
+    <header>
+        <div class="logo">
+            🎓 PlacePrep AI
+        </div>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="/login">Login</a>
+            <a href="/register">Create Account</a>
+        </nav>
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p>PLACEMENT PREPARATION PLATFORM</p>
+
+            <h1>
+                Prepare today.<br>
+                Get ready for tomorrow.
+            </h1>
+
+            <p>
+                Prepare for your placements with coding practice,
+                aptitude tests and interview preparation in one place.
+            </p>
+
+            <a href="/register">
+                Get Started →
+            </a>
+
+        </div>
+
+
+        <!-- PREPARATION IMAGE -->
+
+        <div class="hero-image">
+
+            <img
+                src="{{ url_for('static', filename='images/preparing.png') }}"
+                alt="Student preparing for placement">
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section id="features">
+
+        <h2>Everything you need to prepare</h2>
+
+        <p>
+            Build your skills and confidence before your placement interviews.
+        </p>
+
+
+        <div class="feature-container">
+
+            <div class="feature-card">
+
+                <div>💻</div>
+
+                <h3>Coding Practice</h3>
+
+                <p>
+                    Practice coding problems and improve your
+                    problem-solving skills.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div>🧠</div>
+
+                <h3>Aptitude Tests</h3>
+
+                <p>
+                    Practice quantitative aptitude and logical
+                    reasoning questions.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div>🎤</div>
+
+                <h3>Interview Preparation</h3>
+
+                <p>
+                    Practice HR, technical and project-based
+                    interview questions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <h2>Prepare with confidence</h2>
+
+        <p>
+            PlacePrep AI brings coding, aptitude and interview
+            preparation together in one platform to help students
+            prepare for placement opportunities.
+        </p>
+
+    </section>
+
+
+    <footer>
+
+        © 2026 PlacePrep AI
+
+    </footer>
+
+</body>
+
+</html>

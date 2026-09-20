@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Skill Analysis - PlacePrep AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        PlacePrep AI
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/dashboard">Dashboard</a>
+        <a href="/coding">Coding</a>
+        <a href="/aptitude">Aptitude</a>
+        <a href="/interview">Interview</a>
+        <a href="/skills">Skill Analysis</a>
+        <a href="/logout">Logout</a>
+
+    </div>
+
+</nav>
+
+
+<section class="practice">
+
+    <p class="small-title">
+        SKILL ANALYSIS
+    </p>
+
+    <h1>
+        Analyze your preparation
+    </h1>
+
+    <p>
+        Enter your current scores to identify areas that need more practice.
+    </p>
+
+
+    <div class="question-card">
+
+        <form method="POST">
+
+            <label>
+                Coding Score (%)
+            </label>
+
+            <input
+                type="number"
+                name="coding"
+                min="0"
+                max="100"
+                required>
+
+            <br><br>
+
+
+            <label>
+                Aptitude Score (%)
+            </label>
+
+            <input
+                type="number"
+                name="aptitude"
+                min="0"
+                max="100"
+                required>
+
+            <br><br>
+
+
+            <label>
+                Interview Score (%)
+            </label>
+
+            <input
+                type="number"
+                name="interview"
+                min="0"
+                max="100"
+                required>
+
+            <br><br>
+
+            <button type="submit" class="start-btn">
+                Analyze Skills
+            </button>
+
+        </form>
+
+    </div>
+
+
+    {% if overall is not none %}
+
+    <div class="question-card">
+
+        <h2>
+            Your Analysis
+        </h2>
+
+        <p>
+            Coding: <strong>{{ coding }}%</strong>
+        </p>
+
+        <p>
+            Aptitude: <strong>{{ aptitude }}%</strong>
+        </p>
+
+        <p>
+            Interview: <strong>{{ interview }}%</strong>
+        </p>
+
+        <hr><br>
+
+        <h2>
+            Overall Score: {{ overall }}%
+        </h2>
+
+
+        {% if coding < 50 %}
+
+        <p>
+            💻 Focus more on coding practice.
+        </p>
+
+        {% endif %}
+
+
+        {% if aptitude < 50 %}
+
+        <p>
+            🧠 Practice more aptitude questions.
+        </p>
+
+        {% endif %}
+
+
+        {% if interview < 50 %}
+
+        <p>
+            🎤 Spend more time preparing for interviews.
+        </p>
+
+        {% endif %}
+
+
+        {% if coding >= 50 and aptitude >= 50 and interview >= 50 %}
+
+        <p>
+            Your preparation is progressing well. Keep practicing consistently!
+        </p>
+
+        {% endif %}
+
+    </div>
+
+    {% endif %}
+
+</section>
+
+</body>
+
+</html>

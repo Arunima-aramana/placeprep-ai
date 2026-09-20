@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - PlacePrep AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- TOP BAR -->
+
+    <header class="dashboard-header">
+
+        <div class="dashboard-logo">
+            🎓 PlacePrep AI
+        </div>
+
+        <div class="welcome-user">
+            <span class="user-circle">👤</span>
+            Welcome, {{ name }}!
+        </div>
+
+    </header>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+    <a href="/dashboard" class="side-link active">
+        <span>Dashboard</span>
+    </a>
+
+    <a href="/progress" class="side-link">
+        <span>Progress</span>
+    </a>
+
+    <a href="/profile" class="side-link">
+    <span>Profile</span>
+    </a>
+
+    <a href="/settings" class="side-link">
+    <span>Settings</span>
+    </a>
+
+    <div class="sidebar-line"></div>
+
+    <a href="/logout" class="side-link">
+        <span>Logout</span>
+    </a>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="dashboard-main">
+
+        <section class="dashboard-welcome">
+
+            <p class="dashboard-small-title">
+                YOUR PLACEMENT JOURNEY
+            </p>
+
+            <h1>
+                Welcome back, {{ name }}! 👋
+            </h1>
+
+            <p>
+                Choose a module to continue your placement preparation.
+            </p>
+
+        </section>
+
+
+        <!-- MODULE CARDS -->
+
+        <section class="module-grid">
+
+
+            <!-- CODING -->
+
+            <a href="/coding" class="module-card">
+
+                <div class="module-icon">
+                    💻
+                </div>
+
+                <h2>
+                    Coding Practice
+                </h2>
+
+                <p>
+                    Solve coding problems and improve your programming skills.
+                </p>
+
+                <div class="module-arrow">
+                    →
+                </div>
+
+            </a>
+
+
+            <!-- APTITUDE -->
+
+            <a href="/aptitude" class="module-card">
+
+                <div class="module-icon">
+                    🧠
+                </div>
+
+                <h2>
+                    Aptitude
+                </h2>
+
+                <p>
+                    Practice quantitative and logical reasoning questions.
+                </p>
+
+                <div class="module-arrow">
+                    →
+                </div>
+
+            </a>
+
+
+            <!-- INTERVIEW -->
+
+            <a href="/interview" class="module-card">
+
+                <div class="module-icon">
+                    🎤
+                </div>
+
+                <h2>
+                    Interview Preparation
+                </h2>
+
+                <p>
+                    Get ready with HR, technical and project-based questions.
+                </p>
+
+                <div class="module-arrow">
+                    →
+                </div>
+
+            </a>
+
+
+            <!-- SKILLS -->
+
+            <a href="/skills" class="module-card">
+
+                <div class="module-icon">
+                    📊
+                </div>
+
+                <h2>
+                    Skill Analysis
+                </h2>
+
+                <p>
+                    Track your progress and identify areas for improvement.
+                </p>
+
+                <div class="module-arrow">
+                    →
+                </div>
+
+            </a>
+
+        </section>
+
+
+        <!-- MOTIVATION BOX -->
+
+        <section class="motivation-box">
+
+            <div class="motivation-icon">
+                🎯
+            </div>
+
+            <div>
+
+                <h2>
+                    Small steps every day
+                </h2>
+
+                <p>
+                    lead to big results.
+                </p>
+
+            </div>
+
+            <div class="mountain">
+                ▲
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

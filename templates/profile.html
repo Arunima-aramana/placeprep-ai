@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Profile - PlacePrep AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body class="dashboard-page">
+
+
+    <!-- HEADER -->
+
+    <header class="dashboard-header">
+
+        <div class="dashboard-logo">
+            PlacePrep AI
+        </div>
+
+        <div class="welcome-user">
+
+            <span class="user-circle">
+                {{ name[0]|upper }}
+            </span>
+
+            Welcome, {{ name }}
+
+        </div>
+
+    </header>
+
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <a href="/dashboard"
+           class="side-link">
+
+            <span>Dashboard</span>
+
+        </a>
+
+
+        <a href="/progress"
+           class="side-link">
+
+            <span>Progress</span>
+
+        </a>
+
+
+        <a href="/profile"
+           class="side-link active">
+
+            <span>Profile</span>
+
+        </a>
+
+
+        <a href="#"
+           class="side-link">
+
+            <span>Settings</span>
+
+        </a>
+
+
+        <div class="sidebar-line"></div>
+
+
+        <a href="/logout"
+           class="side-link">
+
+            <span>Logout</span>
+
+        </a>
+
+    </aside>
+
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="dashboard-main">
+
+
+        <!-- TITLE -->
+
+        <section class="dashboard-welcome">
+
+            <p class="dashboard-small-title">
+                MY PROFILE
+            </p>
+
+            <h1>
+                Profile
+            </h1>
+
+            <p>
+                Manage your personal information and placement preparation status.
+            </p>
+
+        </section>
+
+
+
+        <!-- PROFILE LAYOUT -->
+
+        <section class="profile-page">
+
+
+            <!-- PROFILE INFORMATION -->
+
+            <div class="profile-info-card">
+
+                <div class="profile-avatar">
+                    {{ name[0]|upper }}
+                </div>
+
+
+                <h2>
+                    {{ name }}
+                </h2>
+
+
+                <p class="profile-subtitle">
+                    Placement Preparation Student
+                </p>
+
+
+                <div class="profile-details">
+
+                    <div class="profile-detail">
+
+                        <span>
+                            Student Name
+                        </span>
+
+                        <strong>
+                            {{ name }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+                            Email
+                        </span>
+
+                        <strong>
+                            {{ email }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+                            Placement Prep Status
+                        </span>
+
+                        <strong class="status-active">
+                            Preparing for Placement
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- EDIT PROFILE -->
+
+            <div class="edit-profile-card">
+
+                <div class="edit-profile-heading">
+
+                    <p class="progress-label">
+                        ACCOUNT
+                    </p>
+
+                    <h2>
+                        Edit Profile
+                    </h2>
+
+                    <p>
+                        Update your personal information.
+                    </p>
+
+                </div>
+
+
+                <form action="/profile"
+                      method="POST">
+
+
+                    <div class="profile-form-group">
+
+                        <label for="name">
+                            Student Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value="{{ name }}"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="profile-form-group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value="{{ email }}"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="profile-form-group">
+
+                        <label for="status">
+                            Placement Prep Status
+                        </label>
+
+                        <select id="status"
+                                name="status">
+
+                            <option value="Preparing for Placement">
+                                Preparing for Placement
+                            </option>
+
+                            <option value="Actively Applying">
+                                Actively Applying
+                            </option>
+
+                            <option value="Interview Ready">
+                                Interview Ready
+                            </option>
+
+                            <option value="Placed">
+                                Placed
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button type="submit"
+                            class="profile-save-btn">
+
+                        Save Changes
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</body>
+
+</html>

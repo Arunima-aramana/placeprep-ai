@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Settings - PlacePrep AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body class="dashboard-page">
+
+
+    <!-- HEADER -->
+
+    <header class="dashboard-header">
+
+        <div class="dashboard-logo">
+            PlacePrep AI
+        </div>
+
+        <div class="welcome-user">
+
+            <span class="user-circle">
+                {{ name[0]|upper }}
+            </span>
+
+            Welcome, {{ name }}
+
+        </div>
+
+    </header>
+
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <a href="/dashboard"
+           class="side-link">
+
+            <span>Dashboard</span>
+
+        </a>
+
+
+        <a href="/progress"
+           class="side-link">
+
+            <span>Progress</span>
+
+        </a>
+
+
+        <a href="/profile"
+           class="side-link">
+
+            <span>Profile</span>
+
+        </a>
+
+
+        <a href="/settings"
+           class="side-link active">
+
+            <span>Settings</span>
+
+        </a>
+
+
+        <div class="sidebar-line"></div>
+
+
+        <a href="/logout"
+           class="side-link">
+
+            <span>Logout</span>
+
+        </a>
+
+    </aside>
+
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="dashboard-main">
+
+
+        <!-- TITLE -->
+
+        <section class="dashboard-welcome">
+
+            <p class="dashboard-small-title">
+                SETTINGS
+            </p>
+
+            <h1>
+                Settings
+            </h1>
+
+            <p>
+                Customize your PlacePrep AI experience.
+            </p>
+
+        </section>
+
+
+
+        <!-- SETTINGS -->
+
+        <section class="settings-container">
+
+
+            <!-- APPEARANCE -->
+
+            <div class="settings-card">
+
+                <div class="settings-card-heading">
+
+                    <div class="settings-icon">
+                        ◐
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Appearance
+                        </h2>
+
+                        <p>
+                            Choose how PlacePrep AI looks.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="setting-row">
+
+                    <div>
+
+                        <strong>
+                            Dark Mode
+                        </strong>
+
+                        <p>
+                            Use a darker appearance for the application.
+                        </p>
+
+                    </div>
+
+
+                    <label class="switch">
+
+                        <input type="checkbox"
+                               id="darkMode">
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NOTIFICATIONS -->
+
+            <div class="settings-card">
+
+                <div class="settings-card-heading">
+
+                    <div class="settings-icon">
+                        🔔
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Notifications
+                        </h2>
+
+                        <p>
+                            Manage your preparation reminders.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="setting-row">
+
+                    <div>
+
+                        <strong>
+                            Preparation Reminders
+                        </strong>
+
+                        <p>
+                            Receive reminders to continue your preparation.
+                        </p>
+
+                    </div>
+
+
+                    <label class="switch">
+
+                        <input type="checkbox"
+                               id="notifications"
+                               checked>
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ACCOUNT -->
+
+            <div class="settings-card">
+
+                <div class="settings-card-heading">
+
+                    <div class="settings-icon">
+                        ⚙
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Account
+                        </h2>
+
+                        <p>
+                            Manage your PlacePrep AI session.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="setting-row">
+
+                    <div>
+
+                        <strong>
+                            Sign out
+                        </strong>
+
+                        <p>
+                            Sign out of your PlacePrep AI account.
+                        </p>
+
+                    </div>
+
+
+                    <a href="/logout"
+                       class="settings-logout">
+
+                        Logout
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- DARK MODE -->
+
+    <script>
+
+        const darkMode =
+            document.getElementById("darkMode");
+
+
+        darkMode.addEventListener("change", function () {
+
+            if (this.checked) {
+
+                document.body.classList.add("dark-mode");
+
+            } else {
+
+                document.body.classList.remove("dark-mode");
+
+            }
+
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>

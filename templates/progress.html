@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Progress - PlacePrep AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body class="dashboard-page">
+
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="dashboard-header">
+
+        <div class="dashboard-logo">
+            🎓 PlacePrep AI
+        </div>
+
+
+        <div class="welcome-user">
+
+            <span class="user-circle">
+                👤
+            </span>
+
+            Welcome, {{ name }}!
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside class="sidebar">
+
+        <a href="/dashboard"
+           class="side-link">
+
+            <span>Dashboard</span>
+
+        </a>
+
+
+        <a href="/progress"
+           class="side-link active">
+
+            <span>Progress</span>
+
+        </a>
+
+
+        <a href="#"
+           class="side-link">
+
+            <span>Profile</span>
+
+        </a>
+
+
+        <a href="#"
+           class="side-link">
+
+            <span>Settings</span>
+
+        </a>
+
+
+        <div class="sidebar-line"></div>
+
+
+        <a href="/logout"
+           class="side-link">
+
+            <span>Logout</span>
+
+        </a>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- PAGE TITLE -->
+
+        <section class="dashboard-welcome">
+
+            <p class="dashboard-small-title">
+                YOUR PROGRESS
+            </p>
+
+
+            <h1>
+                Track your preparation
+            </h1>
+
+
+            <p>
+                Monitor your performance and keep improving every day.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             OVERALL PROGRESS
+             ================================================= -->
+
+        <section class="progress-overview">
+
+            <div class="overall-card">
+
+                <p class="progress-label">
+                    OVERALL PROGRESS
+                </p>
+
+
+                <h2>
+                    {{ overall }}%
+                </h2>
+
+
+                <div class="large-progress">
+
+                    <div class="large-progress-fill"
+                         style="width: {{ overall }}%;">
+                    </div>
+
+                </div>
+
+
+                <p class="progress-text">
+
+                    {% if overall == 0 %}
+
+                        Start practicing to build your placement readiness.
+
+                    {% elif overall < 50 %}
+
+                        Good start! Keep practicing to improve your preparation.
+
+                    {% elif overall < 80 %}
+
+                        You're making good progress. Keep going!
+
+                    {% else %}
+
+                        Great progress! Keep up the consistency.
+
+                    {% endif %}
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             INDIVIDUAL PROGRESS
+             ================================================= -->
+
+        <section class="progress-grid">
+
+
+            <!-- CODING -->
+
+            <div class="progress-card">
+
+                <div class="progress-card-header">
+
+                    <div>
+
+                        <span class="progress-category">
+                            CODING
+                        </span>
+
+
+                        <h2>
+                            {{ coding_progress }}%
+                        </h2>
+
+                    </div>
+
+
+                    <div class="progress-circle">
+
+                        {{ coding_progress }}%
+
+                    </div>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill"
+                         style="width: {{ coding_progress }}%;">
+                    </div>
+
+                </div>
+
+
+                <p>
+
+                    You have practiced
+                    <strong>{{ coding_solved }}</strong>
+                    coding problem{{ 's' if coding_solved != 1 else '' }}.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- APTITUDE -->
+
+            <div class="progress-card">
+
+                <div class="progress-card-header">
+
+                    <div>
+
+                        <span class="progress-category">
+                            APTITUDE
+                        </span>
+
+
+                        <h2>
+                            {{ aptitude_progress }}%
+                        </h2>
+
+                    </div>
+
+
+                    <div class="progress-circle">
+
+                        {{ aptitude_progress }}%
+
+                    </div>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill"
+                         style="width: {{ aptitude_progress }}%;">
+                    </div>
+
+                </div>
+
+
+                <p>
+
+                    You have completed
+                    <strong>{{ aptitude_tests }}</strong>
+                    aptitude test{{ 's' if aptitude_tests != 1 else '' }}.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- INTERVIEW -->
+
+            <div class="progress-card">
+
+                <div class="progress-card-header">
+
+                    <div>
+
+                        <span class="progress-category">
+                            INTERVIEW
+                        </span>
+
+
+                        <h2>
+                            {{ interview_progress }}%
+                        </h2>
+
+                    </div>
+
+
+                    <div class="progress-circle">
+
+                        {{ interview_progress }}%
+
+                    </div>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill"
+                         style="width: {{ interview_progress }}%;">
+                    </div>
+
+                </div>
+
+
+                <p>
+
+                    You have answered
+                    <strong>{{ interview_answered }}</strong>
+                    interview question{{ 's' if interview_answered != 1 else '' }}.
+
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             REAL ACTIVITY SUMMARY
+             ================================================= -->
+
+        <section class="progress-summary">
+
+
+            <!-- CODING -->
+
+            <div>
+
+                <span>
+                    Problems Practiced
+                </span>
+
+
+                <strong>
+                    {{ coding_solved }}
+                </strong>
+
+            </div>
+
+
+
+            <!-- APTITUDE -->
+
+            <div>
+
+                <span>
+                    Tests Completed
+                </span>
+
+
+                <strong>
+                    {{ aptitude_tests }}
+                </strong>
+
+            </div>
+
+
+
+            <!-- INTERVIEW -->
+
+            <div>
+
+                <span>
+                    Interview Questions
+                </span>
+
+
+                <strong>
+                    {{ interview_answered }}
+                </strong>
+
+            </div>
+
+
+
+            <!-- OVERALL -->
+
+            <div>
+
+                <span>
+                    Overall Progress
+                </span>
+
+
+                <strong>
+                    {{ overall }}%
+                </strong>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</body>
+
+</html>

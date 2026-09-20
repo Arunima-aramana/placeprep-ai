@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account - PlacePrep AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="auth-page">
+
+
+    <!-- Background laptop decorations -->
+
+    <div class="laptop laptop-left">
+
+        <div class="laptop-screen">
+
+            <div class="code-line">learn()</div>
+            <div class="code-line">practice()</div>
+            <div class="code-line">improve()</div>
+            <div class="code-line">succeed()</div>
+
+        </div>
+
+        <div class="laptop-base"></div>
+
+    </div>
+
+
+    <div class="laptop laptop-right">
+
+        <div class="laptop-screen">
+
+            <div class="code-line">Your Career</div>
+            <div class="code-line">Starts Here</div>
+            <div class="code-line">Skills + Practice</div>
+            <div class="code-line">= Success</div>
+
+        </div>
+
+        <div class="laptop-base"></div>
+
+    </div>
+
+
+    <!-- Main content -->
+
+    <div class="auth-container">
+
+        <div class="brand">
+
+            <h1>🎓 PlacePrep AI</h1>
+
+            <p>
+                Your Complete Placement Preparation Companion
+            </p>
+
+            <div class="brand-features">
+                Practice &nbsp; • &nbsp; Improve &nbsp; • &nbsp; Get Placed
+            </div>
+
+        </div>
+
+
+        <div class="auth-card">
+
+            <div class="auth-tabs">
+
+                <a href="/login">
+                    Login
+                </a>
+
+                <div class="active-tab">
+                    Create Account
+                </div>
+
+            </div>
+
+
+            <div class="auth-content">
+
+                <h2>Create Your Account</h2>
+
+                <p class="auth-description">
+                    Start your personalized placement preparation journey.
+                </p>
+
+
+                <form method="POST">
+
+                    <div class="input-group">
+
+                        <label>Full Name</label>
+
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Enter your name"
+                            required>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Email Address</label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Password</label>
+
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Create a password"
+                            required>
+
+                    </div>
+
+
+                    <button type="submit" class="auth-button">
+                        Create Account
+                    </button>
+
+                </form>
+
+
+                <p class="account-text">
+
+                    Already have an account?
+
+                    <a href="/login">
+                        Login
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

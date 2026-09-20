@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Aptitude Practice - PlacePrep AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        PlacePrep AI
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/dashboard">Dashboard</a>
+        <a href="/coding">Coding</a>
+        <a href="/aptitude">Aptitude</a>
+        <a href="/logout">Logout</a>
+
+    </div>
+
+</nav>
+
+
+<section class="practice">
+
+    <p class="small-title">
+        APTITUDE PRACTICE
+    </p>
+
+    <h1>
+        Test your aptitude skills
+    </h1>
+
+    <p>
+        Practice common quantitative and logical reasoning questions.
+    </p>
+
+
+    <form method="POST">
+
+        {% for question in questions %}
+
+        <div class="question-card">
+
+            <h2>
+                {{ loop.index }}. {{ question["question"] }}
+            </h2>
+
+            <br>
+
+            <label>
+                <input type="radio"
+                       name="q{{ question['id'] }}"
+                       value="A"
+                       required>
+                A. {{ question["option_a"] }}
+            </label>
+
+            <br><br>
+
+            <label>
+                <input type="radio"
+                       name="q{{ question['id'] }}"
+                       value="B">
+                B. {{ question["option_b"] }}
+            </label>
+
+            <br><br>
+
+            <label>
+                <input type="radio"
+                       name="q{{ question['id'] }}"
+                       value="C">
+                C. {{ question["option_c"] }}
+            </label>
+
+            <br><br>
+
+            <label>
+                <input type="radio"
+                       name="q{{ question['id'] }}"
+                       value="D">
+                D. {{ question["option_d"] }}
+            </label>
+
+        </div>
+
+        {% endfor %}
+
+
+        <button type="submit" class="start-btn">
+            Submit Test
+        </button>
+
+    </form>
+
+
+    {% if score is not none %}
+
+        <div class="question-card">
+
+            <h2>
+                Your Score
+            </h2>
+
+            <p>
+                You scored <strong>{{ score }}</strong>
+                out of <strong>{{ questions|length }}</strong>.
+            </p>
+
+            {% if score >= 4 %}
+
+                <p>Great job! Keep practicing.</p>
+
+            {% elif score >= 2 %}
+
+                <p>Good attempt! Work on your weak areas.</p>
+
+            {% else %}
+
+                <p>Keep practicing. You will improve!</p>
+
+            {% endif %}
+
+        </div>
+
+    {% endif %}
+
+
+</section>
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Interview Preparation - PlacePrep AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        PlacePrep AI
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/dashboard">Dashboard</a>
+        <a href="/coding">Coding</a>
+        <a href="/aptitude">Aptitude</a>
+        <a href="/interview">Interview</a>
+        <a href="/logout">Logout</a>
+
+    </div>
+
+</nav>
+
+
+<section class="practice">
+
+    <p class="small-title">
+        INTERVIEW PREPARATION
+    </p>
+
+    <h1>
+        Prepare for your interview
+    </h1>
+
+    <p>
+        Practice HR, technical and project-based interview questions.
+    </p>
+
+
+    {% for question in questions %}
+
+    <div class="question-card">
+
+        <span class="difficulty">
+            {{ question["category"] }}
+        </span>
+
+        <h2>
+            {{ loop.index }}. {{ question["question"] }}
+        </h2>
+
+        <textarea
+            placeholder="Write your answer here..."
+            rows="6"></textarea>
+
+        <br><br>
+
+        <button class="start-btn"
+                onclick="showMessage(this)">
+            Save Answer
+        </button>
+
+        <p class="save-message"></p>
+
+    </div>
+
+    {% endfor %}
+
+</section>
+
+
+<script>
+
+function showMessage(button) {
+
+    let message = button.nextElementSibling;
+
+    message.innerText = "Answer saved for practice!";
+
+}
+
+</script>
+
+</body>
+
+</html>
