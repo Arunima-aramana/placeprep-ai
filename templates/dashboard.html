@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Dashboard - PlacePrep AI</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
 
-<body>
+<body class="dashboard-page">
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
+    <!-- TOP BAR -->
 
-        <div class="sidebar-logo">
-            <h2>PlacePrep AI</h2>
+    <header class="dashboard-header">
+
+        <div class="dashboard-logo">
+            🎓 PlacePrep AI
         </div>
+
+        <div class="welcome-user">
+            <span class="user-circle">👤</span>
+            Welcome, {{ name }}!
+        </div>
+
+    </header>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
 
         <a href="/dashboard" class="side-link active">
             <span>Dashboard</span>
@@ -43,110 +58,154 @@
     </aside>
 
 
-    <!-- Main Content -->
-    <main class="main-content">
+    <!-- MAIN CONTENT -->
 
-        <!-- Header -->
-        <header class="dashboard-header">
+    <main class="dashboard-main">
 
-            <div>
-                <h1>Welcome, {{ name }}!</h1>
-                <p>Let's prepare for your placement.</p>
-            </div>
+        <section class="dashboard-welcome">
 
-        </header>
+            <p class="dashboard-small-title">
+                YOUR PLACEMENT JOURNEY
+            </p>
 
+            <h1>
+                Welcome back, {{ name }}! 👋
+            </h1>
 
-        <!-- Dashboard Cards -->
-        <section class="dashboard-cards">
-
-            <!-- Coding -->
-            <div class="dashboard-card">
-
-                <h2>Coding Practice</h2>
-
-                <p>
-                    Practice coding problems and improve your
-                    problem-solving skills.
-                </p>
-
-                <a href="/coding" class="dashboard-button">
-                    Start Coding
-                </a>
-
-            </div>
-
-
-            <!-- Aptitude -->
-            <div class="dashboard-card">
-
-                <h2>Aptitude Tests</h2>
-
-                <p>
-                    Test your quantitative, logical and verbal
-                    reasoning skills.
-                </p>
-
-                <a href="/aptitude" class="dashboard-button">
-                    Take Test
-                </a>
-
-            </div>
-
-
-            <!-- Interview -->
-            <div class="dashboard-card">
-
-                <h2>Interview Preparation</h2>
-
-                <p>
-                    Practice common technical and HR interview
-                    questions.
-                </p>
-
-                <a href="/interview" class="dashboard-button">
-                    Practice Interview
-                </a>
-
-            </div>
-
-
-            <!-- Skills -->
-            <div class="dashboard-card">
-
-                <h2>Skill Assessment</h2>
-
-                <p>
-                    Check your current skills and identify areas
-                    where you can improve.
-                </p>
-
-                <a href="/skills" class="dashboard-button">
-                    View Skills
-                </a>
-
-            </div>
+            <p>
+                Choose a module to continue your placement preparation.
+            </p>
 
         </section>
 
 
-        <!-- Quick Progress -->
-        <section class="quick-progress">
+        <!-- MODULE CARDS -->
 
-            <h2>Your Preparation</h2>
+        <section class="module-grid">
 
-            <p>
-                Keep practicing regularly to improve your
-                placement readiness.
-            </p>
 
-            <a href="/progress" class="dashboard-button">
-                View Progress
+            <!-- CODING -->
+
+            <a href="/coding" class="module-card">
+
+                <div class="module-icon">
+                    💻
+                </div>
+
+                <h2>
+                    Coding Practice
+                </h2>
+
+                <p>
+                    Solve coding problems and improve your programming skills.
+                </p>
+
+                <div class="module-arrow">
+                    →
+                </div>
+
             </a>
+
+
+            <!-- APTITUDE -->
+
+            <a href="/aptitude" class="module-card">
+
+                <div class="module-icon">
+                    🧠
+                </div>
+
+                <h2>
+                    Aptitude
+                </h2>
+
+                <p>
+                    Practice quantitative and logical reasoning questions.
+                </p>
+
+                <div class="module-arrow">
+                    →
+                </div>
+
+            </a>
+
+
+            <!-- INTERVIEW -->
+
+            <a href="/interview" class="module-card">
+
+                <div class="module-icon">
+                    🎤
+                </div>
+
+                <h2>
+                    Interview Preparation
+                </h2>
+
+                <p>
+                    Get ready with HR, technical and project-based questions.
+                </p>
+
+                <div class="module-arrow">
+                    →
+                </div>
+
+            </a>
+
+
+            <!-- SKILLS -->
+
+            <a href="/skills" class="module-card">
+
+                <div class="module-icon">
+                    📊
+                </div>
+
+                <h2>
+                    Skill Analysis
+                </h2>
+
+                <p>
+                    Track your progress and identify areas for improvement.
+                </p>
+
+                <div class="module-arrow">
+                    →
+                </div>
+
+            </a>
+
+        </section>
+
+
+        <!-- MOTIVATION BOX -->
+
+        <section class="motivation-box">
+
+            <div class="motivation-icon">
+                🎯
+            </div>
+
+            <div>
+
+                <h2>
+                    Small steps every day
+                </h2>
+
+                <p>
+                    lead to big results.
+                </p>
+
+            </div>
+
+            <div class="mountain">
+                ▲
+            </div>
 
         </section>
 
     </main>
 
 </body>
+
 </html>
