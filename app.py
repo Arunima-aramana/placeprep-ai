@@ -509,7 +509,6 @@ def profile():
         )
 
         connection.commit()
-
         session["user_name"] = name
 
     user = connection.execute(
@@ -527,7 +526,7 @@ def profile():
         "profile.html",
         name=user["name"],
         email=user["email"]
-    )
+    ) 
 # =====================================================
 # SETTINGS
 # =====================================================
